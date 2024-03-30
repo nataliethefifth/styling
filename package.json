@@ -1,0 +1,26 @@
+{
+  "name": "styling",
+  "version": "1.0.0",
+  "main": "src/App.jsx",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "lint": "eslint \"**/*.{js,jsx}\""
+  },
+  "repository": "git@github.com:nataliethefifth/styling.git",
+  "author": "nataliethefifth <nataliethefifth@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@stylexjs/esbuild-plugin": "^0.5.1",
+    "@stylexjs/eslint-plugin": "^0.5.1",
+    "esbuild": "^0.20.2",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "@stylexjs/open-props": "^0.5.1",
+    "@stylexjs/stylex": "^0.5.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
