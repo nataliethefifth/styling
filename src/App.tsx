@@ -1,6 +1,7 @@
 'use strict';
 
 import { h, render } from 'preact';
+import Router from 'preact-router';
 import { useState } from 'preact/hooks';
 
 import * as stylex from '@stylexjs/stylex';

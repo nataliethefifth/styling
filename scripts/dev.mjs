@@ -8,8 +8,7 @@ import esbuildPluginTsc from 'esbuild-plugin-tsc';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// const BUILD_DIR_NAME = 'public/dist';
-const BUILD_DIR_NAME = 'docs';
+const BUILD_DIR_NAME = 'public';
 const OUTFILE = `${BUILD_DIR_NAME}/bundle.js`;
 const STYLEX_BUNDLE_PATH = path.resolve(
   __dirname,
@@ -53,8 +52,7 @@ await ctx.watch();
 const { host, port } = await ctx.serve({
   host: '0.0.0.0',
   port: 5173,
-  // servedir: 'public',
-  servedir: 'docs',
+  servedir: 'public',
 });
 
 console.log(`Serving app at ${host}:${port}.`);
