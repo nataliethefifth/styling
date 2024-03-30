@@ -1,7 +1,7 @@
 'use strict';
 
-import React, { useState } from 'react';
-import { createRoot } from 'react-dom/client';
+import { h, render } from 'preact';
+import { useState } from 'preact/hooks';
 
 import * as stylex from '@stylexjs/stylex';
 import { colors } from '@stylexjs/open-props/lib/colors.stylex';
@@ -62,5 +62,4 @@ function App() {
   );
 }
 
-const root = createRoot(document.getElementById('root')!); // createRoot(container!) if you use TypeScript
-root.render(<App />);
+render(<App />, document.getElementById("app")!);

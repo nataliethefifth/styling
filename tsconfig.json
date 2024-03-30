@@ -9,7 +9,14 @@
     "skipLibCheck": true,
     // "declaration": true,
     // "declarationDir": "./types",
+    "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    // https://preactjs.com/guide/v10/typescript/#typescript-configuration
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    // Can use jsxFactory here or in esbuild script // https://esbuild.github.io/content-types/#auto-import-for-jsx
+    // "jsxFactory": "h",
+    // "jsxFragmentFactory": "Fragment",
   },
   "exclude": ["node_modules", "dist", "**/*.test.ts"]
 }

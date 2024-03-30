@@ -8,7 +8,8 @@ import esbuildPluginTsc from 'esbuild-plugin-tsc';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const BUILD_DIR_NAME = 'public/dist';
+// const BUILD_DIR_NAME = 'public/dist';
+const BUILD_DIR_NAME = 'docs';
 const OUTFILE = `${BUILD_DIR_NAME}/bundle.js`;
 const STYLEX_BUNDLE_PATH = path.resolve(
   __dirname,
@@ -22,6 +23,8 @@ esbuild
     bundle: true,
     outfile: OUTFILE,
     minify: true,
+    jsxFactory: 'h',
+    jsxFragment: 'Fragment',
     plugins: [
       esbuildPluginTsc({
         // If true, force compilation with tsc
