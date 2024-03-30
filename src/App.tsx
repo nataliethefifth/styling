@@ -1,6 +1,6 @@
 'use strict';
 
-import * as React from 'react';
+import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import * as stylex from '@stylexjs/stylex';
@@ -10,6 +10,8 @@ import { fonts } from '@stylexjs/open-props/lib/fonts.stylex';
 
 import { color } from './stylex/color.stylex';
 import { lightTheme, darkTheme, autoTheme } from './stylex/theme.stylex';
+
+import { helloworld, demo } from './testtsc';
 
 const styles = stylex.create({
   main: {
@@ -40,8 +42,12 @@ const st = stylex.create({
   }
 });
 
+const calc = (x: number, y: number): number => {
+  return x + y;
+}
+
 function App() {
-  const [isLightTheme, setIsLightTheme] = React.useState(true);
+  const [isLightTheme, setIsLightTheme] = useState(true);
   return (
     <div {...stylex.props(styles.main)}>
       <div {...stylex.props(styles.card)}>
@@ -50,9 +56,11 @@ function App() {
       <div {...stylex.props(isLightTheme ? lightTheme : darkTheme, st.test1)}>Test1</div>
       <button onClick={() => setIsLightTheme(prev => !prev)}>Test</button>
       <div {...stylex.props(autoTheme, st.test1)}>Test2</div>
+      <div {...stylex.props(autoTheme, st.test1)}>{`calc => ${calc(10, 20)}`}</div>
+      <div {...stylex.props(autoTheme, st.test1)}>{helloworld} {demo.foo(20)}</div>
     </div>
   );
 }
 
-const root = createRoot(document.getElementById('root')); // createRoot(container!) if you use TypeScript
+const root = createRoot(document.getElementById('root')!); // createRoot(container!) if you use TypeScript
 root.render(<App />);

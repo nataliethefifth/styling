@@ -1,16 +1,9 @@
-/**
- * Copyright (c) Meta Platforms, Inc. and affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- *
- */
 
 import path from 'path';
 import { fileURLToPath } from 'url';
 import esbuild from 'esbuild';
 import stylexPlugin from '@stylexjs/esbuild-plugin';
+import esbuildPluginTsc from 'esbuild-plugin-tsc';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -30,6 +23,12 @@ let ctx = await esbuild.context({
   sourcemap: true,
   minify: false,
   plugins: [
+    esbuildPluginTsc({
+      // If true, force compilation with tsc
+      force: true,
+      // If true, enables tsx file support
+      tsx: true
+    }),
     // See all options in the babel plugin configuration docs:
     // https://stylexjs.com/docs/api/configuration/babel-plugin/
     stylexPlugin({
@@ -42,14 +41,16 @@ let ctx = await esbuild.context({
         rootDir: path.resolve(__dirname, '../'),
       },
     }),
+
   ],
 }).catch(() => process.exit(1));
 
 await ctx.watch();
 
-ctx.serve({
+const { host, port } = await ctx.serve({
   host: '0.0.0.0',
   port: 5173,
   servedir: 'public',
 });
 
+console.log(`Serving app at ${host}:${port}.`);
