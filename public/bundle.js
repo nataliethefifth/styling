@@ -1,87 +1,16 @@
 "use strict";
 (() => {
-  var __create = Object.create;
   var __defProp = Object.defineProperty;
-  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
   var __getOwnPropNames = Object.getOwnPropertyNames;
-  var __getProtoOf = Object.getPrototypeOf;
-  var __hasOwnProp = Object.prototype.hasOwnProperty;
-  var __commonJS = (cb, mod) => function __require() {
-    return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+  var __esm = (fn, res) => function __init() {
+    return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
   };
-  var __copyProps = (to, from, except, desc) => {
-    if (from && typeof from === "object" || typeof from === "function") {
-      for (let key of __getOwnPropNames(from))
-        if (!__hasOwnProp.call(to, key) && key !== except)
-          __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
-    }
-    return to;
+  var __export = (target, all) => {
+    for (var name in all)
+      __defProp(target, name, { get: all[name], enumerable: true });
   };
-  var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
-    // If the importer is in node compatibility mode or this is not an ESM
-    // file that has been converted to a CommonJS file using a Babel-
-    // compatible transform (i.e. "__esModule" has not been set), then set
-    // "default" to the CommonJS "module.exports" for node compatibility.
-    isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
-    mod
-  ));
-
-  // src/testtsc.ts
-  var require_testtsc = __commonJS({
-    "src/testtsc.ts"(exports) {
-      "use strict";
-      var __decorate = exports && exports.__decorate || function(decorators, target, key, desc) {
-        var c3 = arguments.length, r3 = c3 < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d3;
-        if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
-          r3 = Reflect.decorate(decorators, target, key, desc);
-        else
-          for (var i4 = decorators.length - 1; i4 >= 0; i4--)
-            if (d3 = decorators[i4])
-              r3 = (c3 < 3 ? d3(r3) : c3 > 3 ? d3(target, key, r3) : d3(target, key)) || r3;
-        return c3 > 3 && r3 && Object.defineProperty(target, key, r3), r3;
-      };
-      var __metadata = exports && exports.__metadata || function(k3, v3) {
-        if (typeof Reflect === "object" && typeof Reflect.metadata === "function")
-          return Reflect.metadata(k3, v3);
-      };
-      Object.defineProperty(exports, "__esModule", { value: true });
-      exports.demo = exports.helloworld = void 0;
-      exports.helloworld = "Hey";
-      function LogMethod(target, propertyKey, descriptor) {
-        console.log("target", target);
-        console.log("propertyKey", propertyKey);
-        console.log("descriptor", descriptor);
-      }
-      var Demo = class {
-        foo(bar) {
-          console.log("demo foo", bar);
-          return bar + 100;
-        }
-      };
-      __decorate([
-        LogMethod,
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Number]),
-        __metadata("design:returntype", void 0)
-      ], Demo.prototype, "foo", null);
-      exports.demo = new Demo();
-    }
-  });
 
   // node_modules/preact/dist/preact.module.js
-  var n;
-  var l;
-  var u;
-  var t;
-  var i;
-  var o;
-  var r;
-  var f;
-  var e;
-  var c = {};
-  var s = [];
-  var a = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;
-  var h = Array.isArray;
   function v(n2, l3) {
     for (var u4 in l3)
       n2[u4] = l3[u4];
@@ -165,6 +94,11 @@
     } while (null != l3 && 8 === l3.nodeType);
     return l3;
   }
+  function $(n2, l3) {
+    return l3 = l3 || [], null == n2 || "boolean" == typeof n2 || (h(n2) ? n2.some(function(n3) {
+      $(n3, l3);
+    }) : l3.push(n2)), l3;
+  }
   function I(n2, l3, u4, t3) {
     var i4 = n2.key, o3 = n2.type, r3 = u4 - 1, f4 = u4 + 1, e3 = l3[u4];
     if (null === e3 || e3 && i4 == e3.key && o3 === e3.type && 0 == (131072 & e3.__u))
@@ -231,17 +165,17 @@
       return this.l[n2.type + true](l.event ? l.event(n2) : n2);
   }
   function F(n2, u4, t3, i4, o3, r3, f4, e3, c3, s3) {
-    var a3, p3, y3, d3, _, m3, w3, k3, x2, P2, S2, $, I2, H2, T2, A2 = u4.type;
+    var a3, p3, y3, d3, _, m3, w3, k3, x2, P3, S2, $2, I2, H2, T2, A3 = u4.type;
     if (void 0 !== u4.constructor)
       return null;
     128 & t3.__u && (c3 = !!(32 & t3.__u), r3 = [e3 = u4.__e = t3.__e]), (a3 = l.__b) && a3(u4);
     n:
-      if ("function" == typeof A2)
+      if ("function" == typeof A3)
         try {
-          if (k3 = u4.props, x2 = (a3 = A2.contextType) && i4[a3.__c], P2 = a3 ? x2 ? x2.props.value : a3.__ : i4, t3.__c ? w3 = (p3 = u4.__c = t3.__c).__ = p3.__E : ("prototype" in A2 && A2.prototype.render ? u4.__c = p3 = new A2(k3, P2) : (u4.__c = p3 = new b(k3, P2), p3.constructor = A2, p3.render = z), x2 && x2.sub(p3), p3.props = k3, p3.state || (p3.state = {}), p3.context = P2, p3.__n = i4, y3 = p3.__d = true, p3.__h = [], p3._sb = []), null == p3.__s && (p3.__s = p3.state), null != A2.getDerivedStateFromProps && (p3.__s == p3.state && (p3.__s = v({}, p3.__s)), v(p3.__s, A2.getDerivedStateFromProps(k3, p3.__s))), d3 = p3.props, _ = p3.state, p3.__v = u4, y3)
-            null == A2.getDerivedStateFromProps && null != p3.componentWillMount && p3.componentWillMount(), null != p3.componentDidMount && p3.__h.push(p3.componentDidMount);
+          if (k3 = u4.props, x2 = (a3 = A3.contextType) && i4[a3.__c], P3 = a3 ? x2 ? x2.props.value : a3.__ : i4, t3.__c ? w3 = (p3 = u4.__c = t3.__c).__ = p3.__E : ("prototype" in A3 && A3.prototype.render ? u4.__c = p3 = new A3(k3, P3) : (u4.__c = p3 = new b(k3, P3), p3.constructor = A3, p3.render = z), x2 && x2.sub(p3), p3.props = k3, p3.state || (p3.state = {}), p3.context = P3, p3.__n = i4, y3 = p3.__d = true, p3.__h = [], p3._sb = []), null == p3.__s && (p3.__s = p3.state), null != A3.getDerivedStateFromProps && (p3.__s == p3.state && (p3.__s = v({}, p3.__s)), v(p3.__s, A3.getDerivedStateFromProps(k3, p3.__s))), d3 = p3.props, _ = p3.state, p3.__v = u4, y3)
+            null == A3.getDerivedStateFromProps && null != p3.componentWillMount && p3.componentWillMount(), null != p3.componentDidMount && p3.__h.push(p3.componentDidMount);
           else {
-            if (null == A2.getDerivedStateFromProps && k3 !== d3 && null != p3.componentWillReceiveProps && p3.componentWillReceiveProps(k3, P2), !p3.__e && (null != p3.shouldComponentUpdate && false === p3.shouldComponentUpdate(k3, p3.__s, P2) || u4.__v === t3.__v)) {
+            if (null == A3.getDerivedStateFromProps && k3 !== d3 && null != p3.componentWillReceiveProps && p3.componentWillReceiveProps(k3, P3), !p3.__e && (null != p3.shouldComponentUpdate && false === p3.shouldComponentUpdate(k3, p3.__s, P3) || u4.__v === t3.__v)) {
               for (u4.__v !== t3.__v && (p3.props = k3, p3.state = p3.__s, p3.__d = false), u4.__e = t3.__e, u4.__k = t3.__k, u4.__k.forEach(function(n3) {
                 n3 && (n3.__ = u4);
               }), S2 = 0; S2 < p3._sb.length; S2++)
@@ -249,17 +183,17 @@
               p3._sb = [], p3.__h.length && f4.push(p3);
               break n;
             }
-            null != p3.componentWillUpdate && p3.componentWillUpdate(k3, p3.__s, P2), null != p3.componentDidUpdate && p3.__h.push(function() {
+            null != p3.componentWillUpdate && p3.componentWillUpdate(k3, p3.__s, P3), null != p3.componentDidUpdate && p3.__h.push(function() {
               p3.componentDidUpdate(d3, _, m3);
             });
           }
-          if (p3.context = P2, p3.props = k3, p3.__P = n2, p3.__e = false, $ = l.__r, I2 = 0, "prototype" in A2 && A2.prototype.render) {
-            for (p3.state = p3.__s, p3.__d = false, $ && $(u4), a3 = p3.render(p3.props, p3.state, p3.context), H2 = 0; H2 < p3._sb.length; H2++)
+          if (p3.context = P3, p3.props = k3, p3.__P = n2, p3.__e = false, $2 = l.__r, I2 = 0, "prototype" in A3 && A3.prototype.render) {
+            for (p3.state = p3.__s, p3.__d = false, $2 && $2(u4), a3 = p3.render(p3.props, p3.state, p3.context), H2 = 0; H2 < p3._sb.length; H2++)
               p3.__h.push(p3._sb[H2]);
             p3._sb = [];
           } else
             do {
-              p3.__d = false, $ && $(u4), a3 = p3.render(p3.props, p3.state, p3.context), p3.state = p3.__s;
+              p3.__d = false, $2 && $2(u4), a3 = p3.render(p3.props, p3.state, p3.context), p3.state = p3.__s;
             } while (p3.__d && ++I2 < 25);
           p3.state = p3.__s, null != p3.getChildContext && (i4 = v(v({}, i4), p3.getChildContext())), y3 || null == p3.getSnapshotBeforeUpdate || (m3 = p3.getSnapshotBeforeUpdate(d3, _)), C(n2, h(T2 = null != a3 && a3.type === g && null == a3.key ? a3.props.children : a3) ? T2 : [T2], u4, t3, i4, o3, r3, f4, e3, c3, s3), p3.base = u4.__e, u4.__u &= -161, p3.__h.length && f4.push(p3), w3 && (p3.__E = p3.__ = null);
         } catch (n3) {
@@ -346,28 +280,107 @@
     var o3, r3, f4, e3;
     l.__ && l.__(u4, t3), r3 = (o3 = "function" == typeof i4) ? null : i4 && i4.__k || t3.__k, f4 = [], e3 = [], F(t3, u4 = (!o3 && i4 || t3).__k = y(g, null, [u4]), r3 || c, c, void 0 !== t3.ownerSVGElement, !o3 && i4 ? [i4] : r3 ? null : t3.firstChild ? n.call(t3.childNodes) : null, f4, !o3 && i4 ? i4 : r3 ? r3.__e : t3.firstChild, o3, e3), L(f4, u4, e3);
   }
-  n = s.slice, l = { __e: function(n2, l3, u4, t3) {
-    for (var i4, o3, r3; l3 = l3.__; )
-      if ((i4 = l3.__c) && !i4.__)
-        try {
-          if ((o3 = i4.constructor) && null != o3.getDerivedStateFromError && (i4.setState(o3.getDerivedStateFromError(n2)), r3 = i4.__d), null != i4.componentDidCatch && (i4.componentDidCatch(n2, t3 || {}), r3 = i4.__d), r3)
-            return i4.__E = i4;
-        } catch (l4) {
-          n2 = l4;
-        }
-    throw n2;
-  } }, u = 0, t = function(n2) {
-    return null != n2 && null == n2.constructor;
-  }, b.prototype.setState = function(n2, l3) {
-    var u4;
-    u4 = null != this.__s && this.__s !== this.state ? this.__s : this.__s = v({}, this.state), "function" == typeof n2 && (n2 = n2(v({}, u4), this.props)), n2 && v(u4, n2), null != n2 && this.__v && (l3 && this._sb.push(l3), k(this));
-  }, b.prototype.forceUpdate = function(n2) {
-    this.__v && (this.__e = true, n2 && this.__h.push(n2), k(this));
-  }, b.prototype.render = g, i = [], r = "function" == typeof Promise ? Promise.prototype.then.bind(Promise.resolve()) : setTimeout, f = function(n2, l3) {
-    return n2.__v.__b - l3.__v.__b;
-  }, x.__r = 0, e = 0;
+  function B(l3, u4, t3) {
+    var i4, o3, r3, f4, e3 = v({}, l3.props);
+    for (r3 in l3.type && l3.type.defaultProps && (f4 = l3.type.defaultProps), u4)
+      "key" == r3 ? i4 = u4[r3] : "ref" == r3 ? o3 = u4[r3] : e3[r3] = void 0 === u4[r3] && void 0 !== f4 ? f4[r3] : u4[r3];
+    return arguments.length > 2 && (e3.children = arguments.length > 3 ? n.call(arguments, 2) : t3), d(l3.type, e3, i4 || l3.key, o3 || l3.ref, null);
+  }
+  function E(n2, l3) {
+    var u4 = { __c: l3 = "__cC" + e++, __: n2, Consumer: function(n3, l4) {
+      return n3.children(l4);
+    }, Provider: function(n3) {
+      var u5, t3;
+      return this.getChildContext || (u5 = [], (t3 = {})[l3] = this, this.getChildContext = function() {
+        return t3;
+      }, this.shouldComponentUpdate = function(n4) {
+        this.props.value !== n4.value && u5.some(function(n5) {
+          n5.__e = true, k(n5);
+        });
+      }, this.sub = function(n4) {
+        u5.push(n4);
+        var l4 = n4.componentWillUnmount;
+        n4.componentWillUnmount = function() {
+          u5.splice(u5.indexOf(n4), 1), l4 && l4.call(n4);
+        };
+      }), n3.children;
+    } };
+    return u4.Provider.__ = u4.Consumer.contextType = u4;
+  }
+  var n, l, u, t, i, o, r, f, e, c, s, a, h;
+  var init_preact_module = __esm({
+    "node_modules/preact/dist/preact.module.js"() {
+      c = {};
+      s = [];
+      a = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;
+      h = Array.isArray;
+      n = s.slice, l = { __e: function(n2, l3, u4, t3) {
+        for (var i4, o3, r3; l3 = l3.__; )
+          if ((i4 = l3.__c) && !i4.__)
+            try {
+              if ((o3 = i4.constructor) && null != o3.getDerivedStateFromError && (i4.setState(o3.getDerivedStateFromError(n2)), r3 = i4.__d), null != i4.componentDidCatch && (i4.componentDidCatch(n2, t3 || {}), r3 = i4.__d), r3)
+                return i4.__E = i4;
+            } catch (l4) {
+              n2 = l4;
+            }
+        throw n2;
+      } }, u = 0, t = function(n2) {
+        return null != n2 && null == n2.constructor;
+      }, b.prototype.setState = function(n2, l3) {
+        var u4;
+        u4 = null != this.__s && this.__s !== this.state ? this.__s : this.__s = v({}, this.state), "function" == typeof n2 && (n2 = n2(v({}, u4), this.props)), n2 && v(u4, n2), null != n2 && this.__v && (l3 && this._sb.push(l3), k(this));
+      }, b.prototype.forceUpdate = function(n2) {
+        this.__v && (this.__e = true, n2 && this.__h.push(n2), k(this));
+      }, b.prototype.render = g, i = [], r = "function" == typeof Promise ? Promise.prototype.then.bind(Promise.resolve()) : setTimeout, f = function(n2, l3) {
+        return n2.__v.__b - l3.__v.__b;
+      }, x.__r = 0, e = 0;
+    }
+  });
+
+  // node_modules/preact/jsx-runtime/dist/jsxRuntime.module.js
+  function u3(e3, t3, n2, o3, i4, u4) {
+    var a3, c3, p3 = {};
+    for (c3 in t3)
+      "ref" == c3 ? a3 = t3[c3] : p3[c3] = t3[c3];
+    var l3 = { type: e3, props: p3, key: n2, ref: a3, __k: null, __: null, __b: 0, __e: null, __d: void 0, __c: null, constructor: void 0, __v: --f3, __i: -1, __u: 0, __source: i4, __self: u4 };
+    if ("function" == typeof e3 && (a3 = e3.defaultProps))
+      for (c3 in a3)
+        void 0 === p3[c3] && (p3[c3] = a3[c3]);
+    return l.vnode && l.vnode(l3), l3;
+  }
+  var f3, i3;
+  var init_jsxRuntime_module = __esm({
+    "node_modules/preact/jsx-runtime/dist/jsxRuntime.module.js"() {
+      init_preact_module();
+      init_preact_module();
+      f3 = 0;
+      i3 = Array.isArray;
+    }
+  });
+
+  // src/pages/About.tsx
+  var About_exports = {};
+  __export(About_exports, {
+    default: () => About
+  });
+  function About() {
+    return /* @__PURE__ */ u3(g, { children: "About" });
+  }
+  var init_About = __esm({
+    "src/pages/About.tsx"() {
+      "use strict";
+      init_jsxRuntime_module();
+    }
+  });
+
+  // src/App.tsx
+  init_preact_module();
+
+  // node_modules/preact-iso/src/router.js
+  init_preact_module();
 
   // node_modules/preact/hooks/dist/hooks.module.js
+  init_preact_module();
   var t2;
   var r2;
   var u2;
@@ -426,11 +439,28 @@
     }
     return o3.__N || o3.__;
   }
+  function A2(n2, u4) {
+    var i4 = h2(t2++, 4);
+    !e2.__s && C2(i4.__H, u4) && (i4.__ = n2, i4.i = u4, r2.__h.push(i4));
+  }
+  function F2(n2) {
+    return o2 = 5, q(function() {
+      return { current: n2 };
+    }, []);
+  }
+  function q(n2, r3) {
+    var u4 = h2(t2++, 7);
+    return C2(u4.__H, r3) ? (u4.__V = n2(), u4.i = r3, u4.__h = n2, u4.__V) : u4.__;
+  }
+  function P2(n2) {
+    var u4 = r2.context[n2.__c], i4 = h2(t2++, 9);
+    return i4.c = n2, u4 ? (null == i4.__ && (i4.__ = true, u4.sub(r2)), u4.props.value) : n2.__;
+  }
   function j2() {
     for (var n2; n2 = f2.shift(); )
       if (n2.__P && n2.__H)
         try {
-          n2.__H.__h.forEach(z2), n2.__H.__h.forEach(B), n2.__H.__h = [];
+          n2.__H.__h.forEach(z2), n2.__H.__h.forEach(B2), n2.__H.__h = [];
         } catch (t3) {
           n2.__H.__h = [], e2.__e(t3, n2.__v);
         }
@@ -444,7 +474,7 @@
     var i4 = (r2 = n2.__c).__H;
     i4 && (u2 === r2 ? (i4.__h = [], r2.__h = [], i4.__.forEach(function(n3) {
       n3.__N && (n3.__ = n3.__N), n3.__V = c2, n3.__N = n3.i = void 0;
-    })) : (i4.__h.forEach(z2), i4.__h.forEach(B), i4.__h = [], t2 = 0)), u2 = r2;
+    })) : (i4.__h.forEach(z2), i4.__h.forEach(B2), i4.__h = [], t2 = 0)), u2 = r2;
   }, e2.diffed = function(n2) {
     l2 && l2(n2);
     var t3 = n2.__c;
@@ -455,7 +485,7 @@
     t3.some(function(n3) {
       try {
         n3.__h.forEach(z2), n3.__h = n3.__h.filter(function(n4) {
-          return !n4.__ || B(n4);
+          return !n4.__ || B2(n4);
         });
       } catch (r3) {
         t3.some(function(n4) {
@@ -485,324 +515,251 @@
     var t3 = r2, u4 = n2.__c;
     "function" == typeof u4 && (n2.__c = void 0, u4()), r2 = t3;
   }
-  function B(n2) {
+  function B2(n2) {
     var t3 = r2;
     n2.__c = n2.__(), r2 = t3;
+  }
+  function C2(n2, t3) {
+    return !n2 || n2.length !== t3.length || t3.some(function(t4, r3) {
+      return t4 !== n2[r3];
+    });
   }
   function D2(n2, t3) {
     return "function" == typeof t3 ? t3(n2) : t3;
   }
 
-  // node_modules/@stylexjs/stylex/lib/es/stylex.mjs
-  var styleq$1 = {};
-  Object.defineProperty(styleq$1, "__esModule", {
-    value: true
-  });
-  var styleq_2 = styleq$1.styleq = void 0;
-  var cache = /* @__PURE__ */ new WeakMap();
-  var compiledKey = "$$css";
-  function createStyleq(options) {
-    var disableCache;
-    var disableMix;
-    var transform;
-    if (options != null) {
-      disableCache = options.disableCache === true;
-      disableMix = options.disableMix === true;
-      transform = options.transform;
+  // node_modules/preact-iso/src/router.js
+  var push;
+  var UPDATE = (state, url) => {
+    push = void 0;
+    if (url && url.type === "click") {
+      if (url.ctrlKey || url.metaKey || url.altKey || url.shiftKey || url.button !== 0) {
+        return state;
+      }
+      const link = url.target.closest("a[href]");
+      if (!link || link.origin != location.origin || /^#/.test(link.getAttribute("href")) || !/^(_?self)?$/i.test(link.target)) {
+        return state;
+      }
+      push = true;
+      url.preventDefault();
+      url = link.href.replace(location.origin, "");
+    } else if (typeof url === "string") {
+      push = true;
+    } else if (url && url.url) {
+      push = !url.replace;
+      url = url.url;
+    } else {
+      url = location.pathname + location.search;
     }
-    return function styleq2() {
-      var definedProperties = [];
-      var className = "";
-      var inlineStyle = null;
-      var nextCache = disableCache ? null : cache;
-      var styles = new Array(arguments.length);
-      for (var i4 = 0; i4 < arguments.length; i4++) {
-        styles[i4] = arguments[i4];
+    if (push === true)
+      history.pushState(null, "", url);
+    else if (push === false)
+      history.replaceState(null, "", url);
+    return url;
+  };
+  var exec = (url, route, matches) => {
+    url = url.split("/").filter(Boolean);
+    route = (route || "").split("/").filter(Boolean);
+    for (let i4 = 0, val, rest; i4 < Math.max(url.length, route.length); i4++) {
+      let [, m3, param, flag] = (route[i4] || "").match(/^(:?)(.*?)([+*?]?)$/);
+      val = url[i4];
+      if (!m3 && param == val)
+        continue;
+      if (!m3 && val && flag == "*") {
+        matches.rest = "/" + url.slice(i4).map(decodeURIComponent).join("/");
+        break;
       }
-      while (styles.length > 0) {
-        var possibleStyle = styles.pop();
-        if (possibleStyle == null || possibleStyle === false) {
-          continue;
+      if (!m3 || !val && flag != "?" && flag != "*")
+        return;
+      rest = flag == "+" || flag == "*";
+      if (rest)
+        val = url.slice(i4).map(decodeURIComponent).join("/");
+      else if (val)
+        val = decodeURIComponent(val);
+      matches.params[param] = val;
+      if (!(param in matches))
+        matches[param] = val;
+      if (rest)
+        break;
+    }
+    return matches;
+  };
+  function LocationProvider(props) {
+    const [url, route] = y2(UPDATE, props.url || location.pathname + location.search);
+    const wasPush = push === true;
+    const value = q(() => {
+      const u4 = new URL(url, location.origin);
+      const path = u4.pathname.replace(/(.)\/$/g, "$1");
+      return {
+        url,
+        path,
+        query: Object.fromEntries(u4.searchParams),
+        route: (url2, replace) => route({ url: url2, replace }),
+        wasPush
+      };
+    }, [url]);
+    A2(() => {
+      addEventListener("click", route);
+      addEventListener("popstate", route);
+      return () => {
+        removeEventListener("click", route);
+        removeEventListener("popstate", route);
+      };
+    }, []);
+    return y(LocationProvider.ctx.Provider, { value }, props.children);
+  }
+  var RESOLVED = Promise.resolve();
+  function Router(props) {
+    const [c3, update] = y2((c4) => c4 + 1, 0);
+    const { url, query, wasPush, path } = useLocation();
+    const { rest = path, params = {} } = P2(RouteContext);
+    const isLoading = F2(false);
+    const prevRoute = F2(path);
+    const count = F2(0);
+    const cur = F2();
+    const prev = F2();
+    const pendingBase = F2();
+    const hasEverCommitted = F2(false);
+    const didSuspend = F2();
+    didSuspend.current = false;
+    cur.current = q(() => {
+      if (this.__v && this.__v.__k)
+        this.__v.__k.reverse();
+      count.current++;
+      prev.current = cur.current;
+      let p4, d3, m3;
+      $(props.children).some((vnode) => {
+        const matches = exec(rest, vnode.props.path, m3 = { path: rest, query, params, rest: "" });
+        if (matches)
+          return p4 = B(vnode, m3);
+        if (vnode.props.default)
+          d3 = B(vnode, m3);
+      });
+      return y(RouteContext.Provider, { value: m3 }, p4 || d3);
+    }, [url]);
+    const p3 = prev.current;
+    prev.current = null;
+    this.__c = (e3) => {
+      didSuspend.current = true;
+      prev.current = p3;
+      if (props.onLoadStart)
+        props.onLoadStart(url);
+      isLoading.current = true;
+      let c4 = count.current;
+      e3.then(() => {
+        if (c4 !== count.current)
+          return;
+        prev.current = null;
+        RESOLVED.then(update);
+      });
+    };
+    A2(() => {
+      const currentDom = this.__v && this.__v.__e;
+      if (didSuspend.current) {
+        if (!hasEverCommitted.current && !pendingBase.current) {
+          pendingBase.current = currentDom;
         }
-        if (Array.isArray(possibleStyle)) {
-          for (var _i = 0; _i < possibleStyle.length; _i++) {
-            styles.push(possibleStyle[_i]);
-          }
-          continue;
-        }
-        var style = transform != null ? transform(possibleStyle) : possibleStyle;
-        if (style.$$css) {
-          var classNameChunk = "";
-          if (nextCache != null && nextCache.has(style)) {
-            var cacheEntry = nextCache.get(style);
-            if (cacheEntry != null) {
-              classNameChunk = cacheEntry[0];
-              definedProperties.push.apply(definedProperties, cacheEntry[1]);
-              nextCache = cacheEntry[2];
-            }
-          } else {
-            var definedPropertiesChunk = [];
-            for (var prop in style) {
-              var value = style[prop];
-              if (prop === compiledKey)
-                continue;
-              if (typeof value === "string" || value === null) {
-                if (!definedProperties.includes(prop)) {
-                  definedProperties.push(prop);
-                  if (nextCache != null) {
-                    definedPropertiesChunk.push(prop);
-                  }
-                  if (typeof value === "string") {
-                    classNameChunk += classNameChunk ? " " + value : value;
-                  }
-                }
-              } else {
-                console.error("styleq: ".concat(prop, " typeof ").concat(String(value), ' is not "string" or "null".'));
-              }
-            }
-            if (nextCache != null) {
-              var weakMap = /* @__PURE__ */ new WeakMap();
-              nextCache.set(style, [classNameChunk, definedPropertiesChunk, weakMap]);
-              nextCache = weakMap;
-            }
-          }
-          if (classNameChunk) {
-            className = className ? classNameChunk + " " + className : classNameChunk;
-          }
-        } else {
-          if (disableMix) {
-            if (inlineStyle == null) {
-              inlineStyle = {};
-            }
-            inlineStyle = Object.assign({}, style, inlineStyle);
-          } else {
-            var subStyle = null;
-            for (var _prop in style) {
-              var _value = style[_prop];
-              if (_value !== void 0) {
-                if (!definedProperties.includes(_prop)) {
-                  if (_value != null) {
-                    if (inlineStyle == null) {
-                      inlineStyle = {};
-                    }
-                    if (subStyle == null) {
-                      subStyle = {};
-                    }
-                    subStyle[_prop] = _value;
-                  }
-                  definedProperties.push(_prop);
-                  nextCache = null;
-                }
-              }
-            }
-            if (subStyle != null) {
-              inlineStyle = Object.assign(subStyle, inlineStyle);
-            }
-          }
-        }
+        return;
       }
-      var styleProps = [className, inlineStyle];
-      return styleProps;
+      if (!hasEverCommitted.current && pendingBase.current) {
+        if (pendingBase.current !== currentDom)
+          pendingBase.current.remove();
+        pendingBase.current = null;
+      }
+      hasEverCommitted.current = true;
+      if (prevRoute.current !== path) {
+        if (wasPush)
+          scrollTo(0, 0);
+        if (props.onLoadEnd && isLoading.current)
+          props.onLoadEnd(url);
+        if (props.onRouteChange)
+          props.onRouteChange(url);
+        isLoading.current = false;
+        prevRoute.current = path;
+      }
+    }, [path, wasPush, c3]);
+    return [y(RenderRef, { r: cur }), y(RenderRef, { r: prev })];
+  }
+  var RenderRef = ({ r: r3 }) => r3.current;
+  Router.Provider = LocationProvider;
+  LocationProvider.ctx = E(
+    /** @type {RouteInfo} */
+    {}
+  );
+  var RouteContext = E({});
+  var useLocation = () => P2(LocationProvider.ctx);
+
+  // node_modules/preact-iso/src/lazy.js
+  init_preact_module();
+  function lazy(load) {
+    let p3, c3;
+    return (props) => {
+      const [, update] = p2(0);
+      const r3 = F2(c3);
+      if (!p3)
+        p3 = load().then((m3) => c3 = m3 && m3.default || m3);
+      if (c3 !== void 0)
+        return y(c3, props);
+      if (!r3.current)
+        r3.current = p3.then(() => update(1));
+      throw p3;
     };
   }
-  var styleq = createStyleq();
-  styleq_2 = styleq$1.styleq = styleq;
-  styleq.factory = createStyleq;
-  var errorForFn = (name) => new Error(`'stylex.${name}' should never be called at runtime. It should be compiled away by '@stylexjs/babel-plugin'`);
-  var errorForType = (key) => errorForFn(`types.${key}`);
-  function props() {
-    const options = this;
-    for (var _len = arguments.length, styles = new Array(_len), _key = 0; _key < _len; _key++) {
-      styles[_key] = arguments[_key];
+  var oldCatchError = l.__e;
+  l.__e = (err, newVNode, oldVNode) => {
+    if (err && err.then) {
+      let v3 = newVNode;
+      while (v3 = v3.__) {
+        if (v3.__c && v3.__c.__c) {
+          if (newVNode.__e == null) {
+            newVNode.__e = oldVNode.__e;
+            newVNode.__k = oldVNode.__k;
+          }
+          if (!newVNode.__k)
+            newVNode.__k = [];
+          return v3.__c.__c(err, newVNode);
+        }
+      }
     }
-    if (__implementations.props) {
-      return __implementations.props.call(options, styles);
-    }
-    const [className, style] = styleq_2(styles);
-    const result = {};
-    if (className != null && className !== "") {
-      result.className = className;
-    }
-    if (style != null && Object.keys(style).length > 0) {
-      result.style = style;
-    }
-    return result;
-  }
-  function attrs() {
-    const {
-      className,
-      style
-    } = props(...arguments);
-    const result = {};
-    if (className != null && className !== "") {
-      result.class = className;
-    }
-    if (style != null && Object.keys(style).length > 0) {
-      result.style = Object.keys(style).map((key) => `${key}:${style[key]};`).join("");
-    }
-    return result;
-  }
-  function stylexCreate(styles) {
-    if (__implementations.create != null) {
-      const create2 = __implementations.create;
-      return create2(styles);
-    }
-    throw errorForFn("create");
-  }
-  function stylexDefineVars(styles) {
-    if (__implementations.defineVars) {
-      return __implementations.defineVars(styles);
-    }
-    throw errorForFn("defineVars");
-  }
-  var stylexCreateTheme = (baseTokens, overrides) => {
-    if (__implementations.createTheme) {
-      return __implementations.createTheme(baseTokens, overrides);
-    }
-    throw errorForFn("createTheme");
+    if (oldCatchError)
+      oldCatchError(err, newVNode, oldVNode);
   };
-  var stylexInclude = (styles) => {
-    if (__implementations.include) {
-      return __implementations.include(styles);
-    }
-    throw errorForFn("include");
-  };
-  var create = stylexCreate;
-  var defineVars = stylexDefineVars;
-  var createTheme = stylexCreateTheme;
-  var include = stylexInclude;
-  var types = {
-    angle: (_v) => {
-      throw errorForType("angle");
-    },
-    color: (_v) => {
-      throw errorForType("color");
-    },
-    url: (_v) => {
-      throw errorForType("url");
-    },
-    image: (_v) => {
-      throw errorForType("image");
-    },
-    integer: (_v) => {
-      throw errorForType("integer");
-    },
-    lengthPercentage: (_v) => {
-      throw errorForType("lengthPercentage");
-    },
-    length: (_v) => {
-      throw errorForType("length");
-    },
-    percentage: (_v) => {
-      throw errorForType("percentage");
-    },
-    number: (_v) => {
-      throw errorForType("number");
-    },
-    resolution: (_v) => {
-      throw errorForType("resolution");
-    },
-    time: (_v) => {
-      throw errorForType("time");
-    },
-    transformFunction: (_v) => {
-      throw errorForType("transformFunction");
-    },
-    transformList: (_v) => {
-      throw errorForType("transformList");
-    }
-  };
-  var keyframes = (keyframes2) => {
-    if (__implementations.keyframes) {
-      return __implementations.keyframes(keyframes2);
-    }
-    throw errorForFn("keyframes");
-  };
-  var firstThatWorks = function() {
-    if (__implementations.firstThatWorks) {
-      return __implementations.firstThatWorks(...arguments);
-    }
-    throw errorForFn("firstThatWorks");
-  };
-  function _stylex() {
-    for (var _len2 = arguments.length, styles = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-      styles[_key2] = arguments[_key2];
-    }
-    const [className] = styleq_2(styles);
-    return className;
+  function ErrorBoundary(props) {
+    this.__c = childDidSuspend;
+    this.componentDidCatch = props.onError;
+    return props.children;
   }
-  _stylex.props = props;
-  _stylex.attrs = attrs;
-  _stylex.create = create;
-  _stylex.defineVars = defineVars;
-  _stylex.createTheme = createTheme;
-  _stylex.include = include;
-  _stylex.keyframes = keyframes;
-  _stylex.firstThatWorks = firstThatWorks;
-  _stylex.types = types;
-  var __implementations = {};
+  function childDidSuspend(err) {
+    err.then(() => this.forceUpdate());
+  }
 
-  // src/stylex/theme.stylex.ts
-  var lightTheme = {
-    $$css: true,
-    "var(--x1eutwqo)": "x11ys03t"
-  };
-  var darkTheme = {
-    $$css: true,
-    "var(--x1eutwqo)": "xikypld"
-  };
-  var autoTheme = {
-    $$css: true,
-    "var(--x1eutwqo)": "x1cm0aa6"
-  };
+  // node_modules/preact-iso/src/hydrate.js
+  init_preact_module();
 
   // src/App.tsx
-  var import_testtsc = __toESM(require_testtsc());
-
-  // node_modules/preact/jsx-runtime/dist/jsxRuntime.module.js
-  var f3 = 0;
-  var i3 = Array.isArray;
-  function u3(e3, t3, n2, o3, i4, u4) {
-    var a3, c3, p3 = {};
-    for (c3 in t3)
-      "ref" == c3 ? a3 = t3[c3] : p3[c3] = t3[c3];
-    var l3 = { type: e3, props: p3, key: n2, ref: a3, __k: null, __: null, __b: 0, __e: null, __d: void 0, __c: null, constructor: void 0, __v: --f3, __i: -1, __u: 0, __source: i4, __self: u4 };
-    if ("function" == typeof e3 && (a3 = e3.defaultProps))
-      for (c3 in a3)
-        void 0 === p3[c3] && (p3[c3] = a3[c3]);
-    return l.vnode && l.vnode(l3), l3;
+  init_jsxRuntime_module();
+  function Home() {
+    return /* @__PURE__ */ u3(g, { children: "Home" });
   }
-
-  // src/App.tsx
-  var st = {
-    test1: {
-      fontSize: "x1pvqxga",
-      color: "x1awj2ng",
-      backgroundColor: "xgnp6n0",
-      $$css: true
-    }
-  };
-  var calc = (x2, y3) => {
-    return x2 + y3;
-  };
+  var About2 = lazy(() => Promise.resolve().then(() => (init_About(), About_exports)));
   function App() {
     const [isLightTheme, setIsLightTheme] = p2(true);
-    return /* @__PURE__ */ u3("div", { ...{
-      className: "xn9wirt x1dr59a3 x78zum5 x6s0dn4 xl56j7k xjdbt1m"
-    }, children: [
-      /* @__PURE__ */ u3("div", { ...{
-        className: "xgf44l9 x134emux x4f9axe xl56j7k x78zum5 x6s0dn4 xpwyex2 x1rge9jh"
-      }, children: /* @__PURE__ */ u3("span", { children: "Blue rectangle" }) }),
-      /* @__PURE__ */ u3("div", { ...props(isLightTheme ? lightTheme : darkTheme, st.test1), children: "Test1" }),
-      /* @__PURE__ */ u3("button", { onClick: () => setIsLightTheme((prev) => !prev), children: "Test" }),
-      /* @__PURE__ */ u3("div", { ...props(autoTheme, st.test1), children: "Test2" }),
-      /* @__PURE__ */ u3("div", { ...props(autoTheme, st.test1), children: `calc => ${calc(10, 20)}` }),
-      /* @__PURE__ */ u3("div", { ...props(autoTheme, st.test1), children: [
-        import_testtsc.helloworld,
-        " ",
-        import_testtsc.demo.foo(20)
-      ] })
-    ] });
+    return (
+      // <div {...stylex.props(styles.main)}>
+      //   <div {...stylex.props(styles.card)}>
+      //     <span>Blue rectangle</span>
+      //   </div>
+      //   <div {...stylex.props(isLightTheme ? lightTheme : darkTheme, st.test1)}>Test1</div>
+      //   <button onClick={() => setIsLightTheme(prev => !prev)}>Test</button>
+      //   <div {...stylex.props(autoTheme, st.test1)}>Test2</div>
+      //   <div {...stylex.props(autoTheme, st.test1)}>{`calc => ${calc(10, 20)}`}</div>
+      //   <div {...stylex.props(autoTheme, st.test1)}>{helloworld} {demo.foo(20)}</div>
+      // </div>
+      /* @__PURE__ */ u3(ErrorBoundary, { children: /* @__PURE__ */ u3(Router, { children: [
+        /* @__PURE__ */ u3(Home, { path: "/" }),
+        /* @__PURE__ */ u3(About2, { path: "/about" })
+      ] }) })
+    );
   }
   N(/* @__PURE__ */ u3(App, {}), document.getElementById("app"));
 })();

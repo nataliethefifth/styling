@@ -1,18 +1,12 @@
 
-@layer priority1, priority2, priority3, priority4, priority5;
+@layer priority1, priority2, priority3, priority4;
 @layer priority1{
-.xikypld{--xnhbqx9:black;--x1xynfla:grey;}
-.x11ys03t{--xnhbqx9:purple;--x1xynfla:red;}
-.x1cm0aa6{--xnhbqx9:purple;--x1xynfla:red;}
-@media (prefers-color-scheme: dark){.x1cm0aa6{--x1xynfla:grey;--xnhbqx9:black;}}
-}
-@layer priority2{
 .x134emux{padding:var(--x17b71e5)}
 }
-@layer priority3{
+@layer priority2{
 .x4f9axe{border-radius:var(--xs9ks3o)}
 }
-@layer priority4{
+@layer priority3{
 .x6s0dn4{align-items:center}
 .xgf44l9{background-color:var(--x1i8pr58)}
 .xgnp6n0{background-color:var(--xnhbqx9)}
@@ -24,7 +18,7 @@
 .x1pvqxga{font-size:24px}
 .xl56j7k{justify-content:center}
 }
-@layer priority5{
+@layer priority4{
 .x1dr59a3{height:100vh}
 .xn9wirt{width:100vw}
 }
