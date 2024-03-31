@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "isolatedModules": true, 
+    "isolatedModules": true,
     "esModuleInterop": true,
     "module": "CommonJS",
     "forceConsistentCasingInFileNames": true,
@@ -18,5 +18,12 @@
     // "jsxFactory": "h",
     // "jsxFragmentFactory": "Fragment",
   },
-  "exclude": ["node_modules", "dist", "**/*.test.ts"]
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.test.ts"
+  ],
+  // "types": [
+  //   "unplugin-icons/types/preact",
+  // ]
 }

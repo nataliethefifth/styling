@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import esbuild from 'esbuild';
 import stylexPlugin from '@stylexjs/esbuild-plugin';
 import esbuildPluginTsc from 'esbuild-plugin-tsc';
+import Icons from 'unplugin-icons/esbuild';
 
 // import http from 'node:http';
 
@@ -24,20 +25,23 @@ let ctx = await esbuild.context({
   entryPoints: [
     { out: 'index', in: path.resolve(__dirname, '..', 'public/index.html') },
     { out: 'bundle', in: path.resolve(__dirname, '..', 'src/App.jsx') },
+    { out: 'theme', in: path.resolve(__dirname, '..', 'public/theme.html') },
+    { out: 'bundle-theme', in: path.resolve(__dirname, '..', 'src/Theme.jsx') },
   ],
   bundle: true,
   // outfile: OUTFILE,
   outdir: OUTDIR,
-  loader: { ".html": "copy" },
-  sourcemap: true,
   minify: false,
+  loader: { ".html": "copy" },
   jsxFactory: 'h',
   jsxFragment: 'Fragment',
+  sourcemap: true,
   banner: { js: ' (() => new EventSource("/esbuild").addEventListener("change", () => location.reload()))();' },
   // banner: { js: ' (() => new EventSource("/esbuild").onmessage = () => location.reload())();' },
   // define: { ___DEV: 'true' },
   // inject: [path.resolve(__dirname, '..', 'scripts/livereload.js')],
   plugins: [
+    Icons({ compiler: 'jsx', jsx: 'preact' }),
     esbuildPluginTsc({
       // If true, force compilation with tsc
       force: true,

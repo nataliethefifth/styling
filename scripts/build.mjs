@@ -24,6 +24,8 @@ esbuild
     entryPoints: [
       { out: 'index', in: path.resolve(__dirname, '..', 'public/index.html') },
       { out: 'bundle', in: path.resolve(__dirname, '..', 'src/App.jsx') },
+      { out: 'theme', in: path.resolve(__dirname, '..', 'public/theme.html') },
+      { out: 'bundle-theme', in: path.resolve(__dirname, '..', 'src/Theme.jsx') },
     ],
     bundle: true,
     // outfile: OUTFILE,

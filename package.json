@@ -11,18 +11,20 @@
   "author": "nataliethefifth <nataliethefifth@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@iconify/json": "^2.2.196",
     "@stylexjs/esbuild-plugin": "^0.5.1",
     "@stylexjs/eslint-plugin": "^0.5.1",
+    "@svgr/core": "^8.1.0",
+    "@svgr/plugin-jsx": "^8.1.0",
     "esbuild": "^0.20.2",
     "esbuild-plugin-tsc": "^0.4.0",
     "eslint": "^8.57.0",
-    "typescript": "^5.4.3"
+    "typescript": "^5.4.3",
+    "unplugin-icons": "^0.18.5"
   },
   "dependencies": {
     "@stylexjs/open-props": "^0.5.1",
     "@stylexjs/stylex": "^0.5.1",
-    "preact": "^10.20.1",
-    "preact-iso": "^2.5.0",
-    "preact-render-to-string": "^6.4.1"
+    "preact": "^10.20.1"
   }
 }
