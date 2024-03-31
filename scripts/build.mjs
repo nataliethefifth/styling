@@ -9,22 +9,30 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // const BUILD_DIR_NAME = 'public/dist';
-const BUILD_DIR_NAME = 'docs';
-const OUTFILE = `${BUILD_DIR_NAME}/bundle.js`;
+// const BUILD_DIR_NAME = 'docs';
+// const OUTFILE = `${BUILD_DIR_NAME}/bundle.js`;
+const OUTDIR = 'docs';
 const STYLEX_BUNDLE_PATH = path.resolve(
   __dirname,
   '..',
-  `${BUILD_DIR_NAME}/stylex.css`,
+  // `${BUILD_DIR_NAME}/stylex.css`,
+  `${OUTDIR}/stylex.css`,
 );
 
 esbuild
   .build({
-    entryPoints: [path.resolve(__dirname, '..', 'src/App.jsx')],
+    entryPoints: [
+      { out: 'index', in: path.resolve(__dirname, '..', 'public/index.html') },
+      { out: 'bundle', in: path.resolve(__dirname, '..', 'src/App.jsx') },
+    ],
     bundle: true,
-    outfile: OUTFILE,
+    // outfile: OUTFILE,
+    outdir: OUTDIR,
     minify: true,
+    loader: { ".html": "copy" },
     jsxFactory: 'h',
     jsxFragment: 'Fragment',
+    drop: ['console', 'debugger'],
     plugins: [
       esbuildPluginTsc({
         // If true, force compilation with tsc

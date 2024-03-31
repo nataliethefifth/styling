@@ -14,6 +14,8 @@ import { lightTheme, darkTheme, autoTheme } from './stylex/theme.stylex';
 
 import { helloworld, demo } from './testtsc';
 
+// @ts-ignore: ___DEV is defined by esbuild
+// if (___DEV) new EventSource('/esbuild').addEventListener('change', () => location.reload());
 
 const styles = stylex.create({
   main: {
@@ -60,23 +62,23 @@ const About = lazy(() => import('./pages/About'));
 function App() {
   const [isLightTheme, setIsLightTheme] = useState(true);
   return (
-    // <div {...stylex.props(styles.main)}>
-    //   <div {...stylex.props(styles.card)}>
-    //     <span>Blue rectangle</span>
-    //   </div>
-    //   <div {...stylex.props(isLightTheme ? lightTheme : darkTheme, st.test1)}>Test1</div>
-    //   <button onClick={() => setIsLightTheme(prev => !prev)}>Test</button>
-    //   <div {...stylex.props(autoTheme, st.test1)}>Test2</div>
-    //   <div {...stylex.props(autoTheme, st.test1)}>{`calc => ${calc(10, 20)}`}</div>
-    //   <div {...stylex.props(autoTheme, st.test1)}>{helloworld} {demo.foo(20)}</div>
-    // </div>
-    <ErrorBoundary>
-      <Router>
-        {/* <Route path="/" component={Home} /> */}
-        <Home path="/" />
-        <About path="/about" />
-      </Router>
-    </ErrorBoundary>
+    <div {...stylex.props(styles.main)}>
+      <div {...stylex.props(styles.card)}>
+        <span>Blue rectangle</span>
+      </div>
+      <div {...stylex.props(isLightTheme ? lightTheme : darkTheme, st.test1)}>Test1</div>
+      <button onClick={() => setIsLightTheme(prev => !prev)}>Test CB</button>
+      <div {...stylex.props(autoTheme, st.test1)}>Test2</div>
+      <div {...stylex.props(autoTheme, st.test1)}>{`calc => ${calc(10, 20)}`}</div>
+      <div {...stylex.props(autoTheme, st.test1)}>{helloworld} {demo.foo(20)}</div>
+    </div>
+    // <ErrorBoundary>
+    //   <Router>
+    //     {/* <Route path="/" component={Home} /> */}
+    //     <Home path="/" />
+    //     <About path="/about" />
+    //   </Router>
+    // </ErrorBoundary>
   );
 }
 
