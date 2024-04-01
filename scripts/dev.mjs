@@ -4,7 +4,6 @@ import { fileURLToPath } from 'url';
 import esbuild from 'esbuild';
 import stylexPlugin from '@stylexjs/esbuild-plugin';
 import esbuildPluginTsc from 'esbuild-plugin-tsc';
-import Icons from 'unplugin-icons/esbuild';
 
 // import http from 'node:http';
 
@@ -31,7 +30,7 @@ let ctx = await esbuild.context({
   bundle: true,
   // outfile: OUTFILE,
   outdir: OUTDIR,
-  minify: false,
+  // minify: false,
   loader: { ".html": "copy" },
   jsxFactory: 'h',
   jsxFragment: 'Fragment',
@@ -41,7 +40,6 @@ let ctx = await esbuild.context({
   // define: { ___DEV: 'true' },
   // inject: [path.resolve(__dirname, '..', 'scripts/livereload.js')],
   plugins: [
-    Icons({ compiler: 'jsx', jsx: 'preact' }),
     esbuildPluginTsc({
       // If true, force compilation with tsc
       force: true,

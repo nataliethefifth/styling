@@ -1,6 +1,7 @@
 // https://github.com/facebook/stylex/issues/281
 
 import * as stylex from '@stylexjs/stylex';
+import { colors } from '@stylexjs/open-props/lib/colors.stylex';
 import { color } from './color.stylex';
 
 // import { light } from './light'; //Will not work
@@ -13,18 +14,21 @@ import { color } from './color.stylex';
 // -- OR --
 // Need to define light var here !! CANNOT use import
 const light = {
+  backgroundColor: colors.gray1,
+  colorCircleButton: colors.cyan11,
+  bgColorCircleButton: colors.cyan2,
+
   primaryText: 'red',
-  backgroundColor: 'purple',
 };
 export const lightTheme = stylex.createTheme(color, light);
 
-// export const darkTheme = stylex.createTheme(color, {
-//   primaryText: 'grey',
-//   backgroundColor: 'black',
-// });
+
 const dark = {
+  backgroundColor: colors.gray11,
+  colorCircleButton: colors.cyan2,
+  bgColorCircleButton: colors.cyan11,
+
   primaryText: 'grey',
-  backgroundColor: 'black',
 }
 export const darkTheme = stylex.createTheme(color, dark);
 
